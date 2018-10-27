@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import sys
 
 def bgr2rgb(img):
     b,g,r = cv2.split(img)
@@ -54,7 +55,9 @@ def Recover(im, t, A, t0 = 0.1):
 
     return rec
 
-src = cv2.imread('images/test.png')
+
+img_path = sys.argv[1]
+src = cv2.imread(img_path)
 #print(src.shape)
 I = src.astype('float64')/255
 src_gray_read = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
