@@ -56,7 +56,7 @@ def Recover(im, t, A, t0 = 0.1):
     return rec
 
 def dehaze(img_path):
-    src = cv2.imread(img_path)
+    src = cv2.imread(str(img_path))
     I = src.astype('float64')/255
     src_gray_read = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
     src_gray = np.float64(src_gray_read)/255
